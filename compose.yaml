@@ -4,6 +4,16 @@ services:
     container_name: portal
     ports:
       - "5000:5000"
+    env_file:
+      - .env
     environment:
       - FLASK_ENV=production
+      - EVENT_BUILDER_URL=http://event-builder:5001
+      - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+    networks:
+      - fjyeonline-network
     restart: unless-stopped
+
+networks:
+  fjyeonline-network:
+    external: true
