@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Portfolio</title>
+    <!-- SEO -->
+    <meta name="description" content="Short description of the page." />
+    <!-- Open Graph (share cards) -->
+    <meta property="og:title" content="Site Name" />
+    <meta property="og:description" content="Description for link previews" />
+    <meta property="og:image" content="/assets/images/opengraph.jpg" />
+    <meta property="og:url" content="https://yoursite.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Site Name" />
+    <meta name="twitter:description" content="Description for link previews" />
+    <meta name="twitter:image" content="/assets/images/opengraph.jpg" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="./assets/images/film-solid-full.svg"
+      type="image/svg+xml"
+    />
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="./assets/css/global.css" />
+
+    <!-- Component CSS will be loaded dynamically via JS -->
+    <link rel="stylesheet" href="./assets/css/components.css" />
+    <script src="./assets/js/load-components.js" defer></script>
+  </head>
+  <body>
+    <!-- fade element -->
+    <div id="page-fade" class="fade-overlay"></div>
+    <!-- Header placeholder -->
+    <div id="header-container"></div>
+
+    <!-- Main page content -->
+    <main id="main-content">
+      <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+          <source src="./assets/videos/test-video.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Hero footer overlay -->
+        <div class="hero-footer-overlay">
+          <h2 class="call-to-action-text">Neque porro quisquam est qui...</h2>
+        </div>
+      </section>
+
+      <!-- Example film cards -->
+      <section class="film-section">
+        <div class="film-container"></div>
+      </section>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-container"></div>
+  </body>
+</html>
+
+<!-- card-maker js -->
+<script src="./assets/js/card-maker.js" defer></script>
+<script src="./assets/js/base.js" defer></script>
+<!-- python -m http.server 8000 -->

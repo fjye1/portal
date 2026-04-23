@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #E1E1DF; 
+  --bg-card: #DFDED0;
+  --text-main: #000000;
+  --shadow-main: rgb(0, 0, 0);
+  --project-type: #aaa;
+  --last-updated: #777;
+  --page-background:#ebeaeb;
+}
+
+/* #85B5FF blue */
+/* #B62F3A red  */
+/* black #162924  */
+/* #9DC8B1 green  */
+/* #FADB56 yellow */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Full-screen overlay for fade */
+.fade-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  pointer-events: none; /* allow clicks to pass through initially */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1000;
+}
+
+/* header */
+
+/* Footer */
+
+/* Project cards  */
+
+

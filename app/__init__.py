@@ -34,8 +34,10 @@ def create_app():
     # 6. Register Blueprints
     from app.routes.auth import auth_bp
     from app.routes.proxy import proxy_bp
+    from app.routes.home import home_bp
     
     app.register_blueprint(auth_bp)
     app.register_blueprint(proxy_bp)
+    app.register_blueprint(home_bp)
 
     return app

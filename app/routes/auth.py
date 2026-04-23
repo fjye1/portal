@@ -30,7 +30,7 @@ def login():
         # 3️ Log the user in
         login_user(user)
         # 5️ Redirect to home page
-        return redirect(url_for('home.index'))
+        return redirect(url_for('home.portal'))
     # 6️ Render login template with form
     return render_template("auth/login.html", form=form)
 
@@ -58,7 +58,7 @@ def register():
         # 3️ Create new user
         new_user = User( 
             email=form.email.data, # type: ignore
-            username=form.name.data, # type: ignore
+            username=form.username.data, # type: ignore
             password=hashed_password # type: ignore
         )
         db.session.add(new_user)
@@ -83,4 +83,4 @@ def register():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('home.index'))
+    return redirect(url_for('home.portal'))

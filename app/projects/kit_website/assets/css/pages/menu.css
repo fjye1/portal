@@ -1,0 +1,62 @@
+body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: white;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 300px;
+    }
+
+    .menu-item {
+      position: relative;
+      display: block;
+      font-size: 2rem;
+      color: black;
+      text-decoration: none;
+      padding-left: 0;
+      overflow: hidden;
+    }
+
+    /* The fill bar */
+    .menu-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%; /* starts empty */
+      z-index: -1; /* behind text */
+      transition: width 0.3s ease;
+    }
+
+    /* Fill on hover */
+    .menu-item:hover::before {
+      width: 100%;
+    }
+
+    /* Different colors for each menu item */
+    .home::before {
+      background: #FADB56;
+    }
+    .contact::before {
+      background: #B62F3A;
+    }
+    .about::before {
+      background: #85B5FF;
+    }
+
+    /* Optional: text stays visible on top */
+    .menu-item span {
+      position: relative;
+      z-index: 1;
+    }

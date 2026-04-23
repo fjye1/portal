@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Libre_Baskerville";
+  src:
+    url("../../fonts/Libre_Baskerville/LibreBaskerville-Italic.woff2")
+      format("woff2"),
+    url("../../fonts/Libre_Baskerville/LibreBaskerville-Italic.woff")
+      format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header sits on top */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  font-family: "Libre_Baskerville", sans-serif;
+  color: white;
+  padding-top: 40px;
+  padding-left: clamp(25px, 5vw, 150px);
+  padding-right: clamp(25px, 5vw, 150px);
+  font-size: clamp(
+    24px,
+    5vw,
+    64px
+  ); /* min 24px, scales with viewport, max 64px */
+}
+
+.logo-text {
+  font-family: "Libre_Baskerville", sans-serif;
+  font-size: clamp(24px, 5vw, 64px);
+  color: white;
+  margin: 0; /* reset h1 default margin */
+}
+
+/* Container */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Overlay element */
+.hero-footer-overlay {
+  position: absolute;
+  bottom: 20px; /* distance from bottom of hero */
+  text-align: left;
+  padding-bottom: 40px; /* distance from bottom of hero */
+  font-family: "Libre_Baskerville", sans-serif;
+  color: white;
+  padding-left: clamp(25px, 5vw, 150px);
+  padding-right: clamp(25px, 5vw, 150px);
+  font-size: clamp(40px, 5vw, 90px);
+}
+
+/* Hamburger container */
+/* Hamburger container */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: clamp(24px, 5vw, 48px);
+  height: clamp(18px, 3.5vw, 32px);
+  cursor: pointer;
+}
+
+/* Hamburger lines */
+.hamburger span {
+  display: block;
+  height: clamp(3px, 0.5vw, 5px);
+  background: white;
+  border-radius: 2px;
+  transition: width 0.3s ease; /* animate width changes */
+  width: 100%;
+}
+
+/* Short line */
+.hamburger span.short {
+  width: 60%;
+}
+
+/* Hover effect */
+.hamburger:hover span {
+  width: 80%; /* increase all lines on hover */
+}
+
+.hamburger:hover span.short {
+  width: 90%; /* make the short line grow more */
+}

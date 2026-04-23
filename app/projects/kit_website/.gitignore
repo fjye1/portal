@@ -1,0 +1,30 @@
+# Node / JS dependencies (if you ever use npm)
+node_modules/
+package-lock.json
+yarn.lock
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor files
+.vscode/
+*.sublime-workspace
+*.sublime-project
+*.idea/
+
+# Logs
+*.log
+
+# Local build or temp folders
+/dist/
+/build/
+/tmp/
+/*.local
+
+# Environment / config
+.env
+
+# MacOS specific
+.AppleDouble
+.LSOverride

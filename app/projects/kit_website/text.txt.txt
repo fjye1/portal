@@ -1,0 +1,62 @@
+KIT VINCENT
+About
+RED HERRING
+Kit Vincent is an award winning filmmaker and creative health expert based in London. 
+
+kitvincenttv@gmail.com
+
+I am a multi-skilled documentary filmmaker and creative health expert working across the arts and health sector. As somebody with lived experience of acquired brain injury my focus is on the transformational impact of arts on wellbeing especially for, but not limited to people with ABI (acquired brain injury).
+
+I am a Film Independent Fellow, JFI Fellow and UCL East London Scholar. My debut documentary feature Red Herring (2023) screened in cinemas across the U.K and Ireland and had its U.K premiere at Sheffield Docfest and its European Premiere at IDFA. It was nominated for a British Independent Film Award, won Best UK Feature at the Raindance Film Festival and the 'Human Values' award at Thessaloniki Film Festival awarded by the Hellenic Parliament. It was funded by BFI Doc Society, Sundance Documentary Film Program, The Whickers and France TV. The guardian gave the film 4 stars.
+
+I currently hold a part-time position at Headway East London as a Peer Training Lead. HEL is a charity supporting people living with brain injury. In addition to this i'm studying a MASc in Creative Health at UCL and I hold a first class degree in Anthropology and Visual Practice from Goldsmiths University of London.
+
+kitvincenttv@gmail.com
+
+
+okay here we go
+
+
+
+.
+./assets
+./assets/css
+./assets/css/components.css
+./assets/css/global.css
+./assets/css/pages
+./assets/css/pages/footer.css
+./assets/css/pages/header.css
+./assets/css/pages/index.css
+./assets/css/pages/menu.css
+./assets/fonts
+./assets/fonts/Libre_Baskerville
+./assets/fonts/Libre_Baskerville/LibreBaskerville-Italic.woff
+./assets/fonts/Libre_Baskerville/LibreBaskerville-Italic.woff2
+./assets/fonts/Libre_Baskerville/LibreBaskerville-Regular.woff2
+./assets/fonts/Libre_Baskerville/OFL.txt
+./assets/fonts/Libre_Baskerville/README.txt
+./assets/fonts/Libre_Baskerville/static
+./assets/images
+./assets/images/film-solid-full.svg
+./assets/images/gmail.svg
+./assets/js
+./assets/js/base.js
+./assets/js/card-maker.js
+./assets/js/load-components.js
+./assets/videos
+./assets/videos/test-video.mp4
+./CNAME
+./components
+./components/footer.html
+./components/header.html
+./index.html
+./pages
+./pages/about.html
+./pages/base.html
+./pages/contact.html
+./pages/film.html
+./pages/menu.html
+./README.md
+./robots.txt
+./sitemap.xml
+./text.txt.txt

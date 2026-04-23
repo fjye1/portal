@@ -1,0 +1,49 @@
+/* Film cards */
+
+.film-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  justify-items: center; /* center cards in wide containers */
+}
+
+.film-card {
+  width: 100%; /* fill the grid column */
+  max-width: 400px; /* prevents cards/images from getting too wide */
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-card);
+  color: #ebeaeb;
+  box-shadow: 0 4px 10px var(--shadow-main);
+  display: flex;
+  flex-direction: column;
+}
+
+.film-img {
+  width: 100%;
+  max-width: 100%; /* never exceed card width */
+  height: auto; /* maintain aspect ratio */
+  object-fit: cover; /* crop if necessary, but don’t stretch */
+}
+
+.film-body {
+  padding: 2rem;
+}
+
+.film-title {
+  margin: 0;
+}
+
+.film-type {
+  font-style: italic;
+  color: var(--project-type);
+}
+
+.film-section {
+    padding: 30px; /* top/bottom & left/right */
+}
+
+.film-icon {
+  width: auto; /* adjust size as needed */
+  height: 24px;
+}
