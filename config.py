@@ -9,6 +9,7 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     SECRET_KEY = os.environ.get("SECRET_KEY") # or "dev-secret-key"   fallback for dev
     CSFR_KEY = os.environ.get("CSFR")
+    EVENT_BUILDER_URL = os.getenv("EVENT_BUILDER_URL")
 
 
 
