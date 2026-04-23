@@ -3,7 +3,7 @@ from .extensions import db, login_manager
 from app.utils.gravatar import gravatar_url
 from flask_wtf import CSRFProtect
 from flask_migrate import Migrate
-
+from app.context_injectors import inject_urls
 # 1. Instantiate extensions outside the factory
 csrf = CSRFProtect()
 migrate = Migrate()
@@ -16,6 +16,8 @@ def create_app():
         template_folder='../templates'
     )
     app.config.from_object("config.Config")
+
+
 
     # 3. Import models so SQLAlchemy/Alembic knows they exist
     from . import models
@@ -39,5 +41,7 @@ def create_app():
     app.register_blueprint(auth_bp)
     app.register_blueprint(proxy_bp)
     app.register_blueprint(home_bp)
+
+    app.context_processor(inject_urls)
 
     return app
