@@ -29,3 +29,10 @@ def samadhi_therapies(path='index.html'):
     saba_path = os.path.join(current_app.root_path, 'projects', 'Samadhi-Therapies')
     return send_from_directory(saba_path, path)
 
+@home_bp.route('/idle_hands/')
+@home_bp.route('/idle_hands/<path:path>')
+@login_required
+def idle_hands(path='index.html'):
+    lynn_path = os.path.join(current_app.root_path, 'projects', 'Idle_hands')
+    return send_from_directory(lynn_path, path)
+

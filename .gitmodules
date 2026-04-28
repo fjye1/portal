@@ -4,3 +4,7 @@
 [submodule "projects/Samadhi-Therapies"]
 	path = projects/Samadhi-Therapies
 	url = https://github.com/fjye1/Samadhi-Therapies.git
+[submodule "app/projects/Idle_hands"]
+	path = app/projects/Idle_hands
+	url = https://github.com/fjye1/Idle_hands.git
+	branch = portal
