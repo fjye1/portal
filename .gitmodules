@@ -1,10 +1,13 @@
-[submodule "projects/kit_website"]
-	path =app/projects/kit_website
+[submodule "app/projects/kit_website"]
+	path = app/projects/kit_website
 	url = https://github.com/fjye1/kit_website.git
-[submodule "projects/Samadhi-Therapies"]
+[submodule "aap/projects/Samadhi-Therapies"]
 	path = app/projects/Samadhi-Therapies
 	url = https://github.com/fjye1/Samadhi-Therapies.git
 [submodule "app/projects/Idle_hands"]
 	path = app/projects/Idle_hands
 	url = https://github.com/fjye1/Idle_hands.git
 	branch = portal
+[submodule "app/projects/Samadhi-Therapies"]
+	path = app/projects/Samadhi-Therapies
+	url = https://github.com/fjye1/Samadhi-Therapies.git
