@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Portal</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <body class="bg-light">
+    <div
+      class="container d-flex justify-content-center align-items-center vh-100"
+    >
+      <div class="card shadow-sm" style="width: 100%; max-width: 450px">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4">Create Account</h2>
+
+          {% with messages = get_flashed_messages(with_categories=true) %} {% if
+          messages %} {% for category, message in messages %}
+          <div class="alert alert-{{ category }} small">{{ message }}</div>
+          {% endfor %} {% endif %} {% endwith %}
+
+          <form method="POST">
+            {{ form.csrf_token }}
+
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              {{ form.username(class="form-control", placeholder="John Doe") }}
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Email address</label>
+              {{ form.email(class="form-control",
+              placeholder="name@example.com") }}
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <div class="input-group">
+                {{ form.password(class="form-control", id="passwordField",
+                placeholder="Min. 8 characters") }}
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  onclick="togglePassword('passwordField', 'toggleIcon1')"
+                >
+                  <i class="bi bi-eye" id="toggleIcon1"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Confirm Password</label>
+              <div class="input-group">
+                {{ form.confirm_password(class="form-control",
+                id="confirmField", placeholder="Repeat password") }}
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  onclick="togglePassword('confirmField', 'toggleIcon2')"
+                >
+                  <i class="bi bi-eye" id="toggleIcon2"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2 mt-4">
+              <button type="submit" class="btn btn-success">Register</button>
+              <hr />
+              <p class="text-center small">Already have an account?</p>
+              <a
+                href="{{ url_for('auth.login') }}"
+                class="btn btn-outline-primary"
+              >
+                Back to Login
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  function togglePassword(fieldId, iconId) {
+    const passwordInput = document.getElementById(fieldId);
+    const icon = document.getElementById(iconId);
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      icon.classList.replace("bi-eye", "bi-eye-slash");
+    } else {
+      passwordInput.type = "password";
+      icon.classList.replace("bi-eye-slash", "bi-eye");
+    }
+  }
+</script>
