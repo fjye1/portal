@@ -4,8 +4,8 @@ from flask_login import current_user
 from app.models import ProjectAccess
 
 def has_project_access(project_name):
-    # if current_user.admin:
-    #     return True
+    if current_user.admin:
+        return True
     return ProjectAccess.query.filter_by(
         project_name=project_name,
         email=current_user.email.lower()

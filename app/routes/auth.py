@@ -1,9 +1,10 @@
 from flask import Blueprint, render_template, flash, redirect, url_for
 from flask_login import login_user, login_required, logout_user
-from app.extensions import login_manager, db, safe_commit
-from app.models import User
-from app.forms import RegisterForm, LoginForm
 from werkzeug.security import generate_password_hash, check_password_hash
+
+from app.extensions import login_manager, db, safe_commit
+from app.forms import RegisterForm, LoginForm
+from app.models import User, ProjectAccess
 
 
 # User loader
@@ -23,7 +24,7 @@ def login():
         # 1️ Look up user by email
         user = User.query.filter_by(email=form.email.data).first()
         # 2️ Check password
-        if not user or not check_password_hash(user.password, form.password.data): # type: ignore
+        if not user or not check_password_hash(user.password, form.password.data):  # type: ignore
             flash("Invalid email or password", "danger")
             return redirect(url_for('auth.login'))
 
@@ -35,12 +36,20 @@ def login():
     return render_template("auth/login.html", form=form)
 
 
-
 @auth_bp.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
 
     if form.validate_on_submit():
+        # 0 Check is allowed to register
+        allowed = ProjectAccess.query.filter_by(
+            project_name="register",
+            email=form.email.data.lower().strip()
+        ).first()
+
+        if not allowed:
+            flash("You're not on the invite list.", "error")
+            return redirect(url_for('auth.login'))
         # 1️ Check if email exists
         existing_user = db.session.execute(
             db.select(User).where(User.email == form.email.data)
@@ -51,16 +60,16 @@ def register():
 
         # 2️ Hash password
         hashed_password = generate_password_hash(
-            form.password.data, # type: ignore
+            form.password.data,  # type: ignore
             method='pbkdf2:sha256',
             salt_length=8
         )
 
         # 3️ Create new user
-        new_user = User( 
-            email=form.email.data, # type: ignore
-            username=form.username.data, # type: ignore
-            password=hashed_password # type: ignore
+        new_user = User(
+            email=form.email.data,  # type: ignore
+            username=form.username.data,  # type: ignore
+            password=hashed_password  # type: ignore
         )
         db.session.add(new_user)
         safe_commit()
