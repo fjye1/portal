@@ -1,6 +1,9 @@
-from flask import Blueprint, send_from_directory, render_template, redirect, url_for, current_app
+from flask import Blueprint, send_from_directory, render_template, redirect, url_for, current_app, abort, flash
 from flask_login import login_required
 import os
+from app.decorators import has_project_access
+
+
 home_bp = Blueprint('home', __name__)
 
 
@@ -18,6 +21,10 @@ def portal():
 @home_bp.route('/kit_website/<path:path>')
 @login_required
 def kit_website(path='index.html'):
+    if not has_project_access('kit_website'):
+        flash("You don't have access to this project.", "error")
+        return redirect(url_for('home.portal'))
+
     kit_path = os.path.join(current_app.root_path, 'projects', 'kit_website')
     return send_from_directory(kit_path, path)
 
@@ -26,6 +33,8 @@ def kit_website(path='index.html'):
 @home_bp.route('/SamadhiTherapies/<path:path>')
 @login_required
 def samadhi_therapies(path='index.html'):
+    if not has_project_access('samadhi_therapies'):
+        abort(403)
     saba_path = os.path.join(current_app.root_path, 'projects', 'Samadhi-Therapies')
     return send_from_directory(saba_path, path)
 
@@ -33,6 +42,11 @@ def samadhi_therapies(path='index.html'):
 @home_bp.route('/idle_hands/<path:path>')
 @login_required
 def idle_hands(path='index.html'):
+    if not has_project_access('idle_hands'):
+        abort(403)
     lynn_path = os.path.join(current_app.root_path, 'projects', 'Idle_hands')
     return send_from_directory(lynn_path, path)
+
+
+
 

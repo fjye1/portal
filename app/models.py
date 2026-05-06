@@ -22,3 +22,9 @@ class Project(db.Model):
     
     # The Foreign Key links the project to a specific User ID
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    
+    
+class ProjectAccess(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    project_name = db.Column(db.String(100), nullable=False)  # e.g. 'kit_website'
+    email = db.Column(db.String(200), nullable=False)
