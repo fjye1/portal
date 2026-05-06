@@ -7,8 +7,12 @@
     <button type="submit">Add</button>
 </form>
 
+<a href="{{ url_for('home.portal') }}" class="btn btn-primary">
+    return home
+</a>
+
 <ul>
-{% for entry in access_list %}
+    {% for entry in access_list %}
     <li>{{ entry.project_name }} — {{ entry.email }}</li>
-{% endfor %}
+    {% endfor %}
 </ul>

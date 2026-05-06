@@ -34,7 +34,8 @@ def kit_website(path='index.html'):
 @login_required
 def samadhi_therapies(path='index.html'):
     if not has_project_access('samadhi_therapies'):
-        abort(403)
+        flash("You don't have access to this project.", "error")
+        return redirect(url_for('home.portal'))
     saba_path = os.path.join(current_app.root_path, 'projects', 'Samadhi-Therapies')
     return send_from_directory(saba_path, path)
 
@@ -43,7 +44,8 @@ def samadhi_therapies(path='index.html'):
 @login_required
 def idle_hands(path='index.html'):
     if not has_project_access('idle_hands'):
-        abort(403)
+        flash("You don't have access to this project.", "error")
+        return redirect(url_for('home.portal'))
     lynn_path = os.path.join(current_app.root_path, 'projects', 'Idle_hands')
     return send_from_directory(lynn_path, path)
 
